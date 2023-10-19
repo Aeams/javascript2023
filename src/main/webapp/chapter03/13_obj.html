@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>obj</title>
+</head>
+<body>
+	
+	
+	
+	<script>
+		
+		function add(){
+			var header = document.createElement('h3'); // <h3>요소 생성
+			var textNode = document.createTextNode('내 이름은 오세원입니다.');
+			
+			header.appendChild(textNode);//<h3>내 이름은 오세원입니다.</h3>
+			document.body.appendChild(header);
+		}
+
+	</script>
+	
+	<a href="#" onclick="add()">당신의 이름은?</a>
+	
+</body>
+</html>

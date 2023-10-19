@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>arr</title>
+</head>
+<body>
+	
+	<script>
+		var city=new Array("Seoul", "Busan", "Inchen");
+		function printArr(){
+			var i;
+			for(i=0; i<city.length; i++){
+				document.write("배열 데이터 ["+ i +"] = "+city[i]+"<br>");
+			}
+		}
+		
+		printArr();
+		
+		document.write("===============================================<p/>")
+		
+		var city=new Array("Seoul", "Busan", "Inchen");
+		function printArr(){
+			
+			if(city instanceof Array){
+					document.write("배열 객체 생성되었습니다");
+				var i;
+				for(i=0; i<city.length; i++){
+					document.write("배열 데이터 ["+ i +"] = "+city[i]+"<br>");
+				     }
+			    }else{
+			    	document.write("배열 객체가 아닙니다.");
+			    	document.write("데이터 : "+ city+"<br>");
+			    	}
+		    }
+		
+		printArr();
+		document.write("city 변수 타입 "+ typeof city +"<br>");
+		document.write("배열의 객체 결과 "+ Array.isArray(city) +"<br>");
+		
+	</script>
+	
+</body>
+</html>

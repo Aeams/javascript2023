@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+
+	<script>
+		
+		document.addEventListener("DOMContentLoaded", function(){
+			var button = document.getElementById('myButton');
+			var input = document.getElementById('myInput');
+			var output = document.getElementById('output');
+			
+			button.addEventListener("click", function(){
+				var name = input.value;
+				output.textContent = name;
+			});
+		});
+		
+	</script>
+
+</head>
+<body>
+	
+	<input type="text" id="myInput" placeholder="이름을 입력하세요" />
+    <button id="myButton">출력</button>
+    <div id="output"></div>
+	
+</body>
+</html>

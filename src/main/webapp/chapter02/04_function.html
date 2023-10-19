@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>function</title>
+</head>
+<body>
+	
+	<script>
+		
+		//무명함수
+		var printMsg=function(msg){
+			document.write("무명 함수 : <b>" + msg + "</b><br>");
+		}
+		
+		//기명함수
+		function printMsg(msg){
+			document.write("기명 함수 : <b>" + msg + "</b><br>");
+		}	
+		
+		
+		printMsg("호출되었습니다."); // 무명함수가 기명함수보다 먼저 호출됨
+		
+	</script>
+	
+</body>
+</html>

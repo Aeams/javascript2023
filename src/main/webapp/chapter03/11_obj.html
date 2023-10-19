@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>obj</title>
+</head>
+<body>
+	
+	<p id="d1"></p>
+    <p id="d2"></p>
+    <p id="d3"></p>
+    <p id="d4"></p>
+    <p id="d5"></p>
+    <p id="d6"></p>
+    <p id="d7"></p>
+    <p id="d8"></p>
+    <p id="d9"></p>
+	
+	<script>
+		var today = new Date();
+		
+		document.getElementById('d1').innerHTML = today.toDateString();
+		
+		//확장 된 ISO형식(ISO 8601)문자열 / 반환값이 27글자 까지 가능(yyyy-MM-DDTHH:mm:ss.sss)
+		document.getElementById('d2').innerHTML = today.toISOString();
+		
+		//Date객체를 문자열로 표현
+		document.getElementById("d3").innerHTML=today.toJSON();  
+ 	    document.getElementById("d4").innerHTML=today.toLocaleDateString();  
+	    document.getElementById("d5").innerHTML=today.toLocaleTimeString();  
+	 	document.getElementById("d6").innerHTML=today.toLocaleString();  
+	    document.getElementById("d7").innerHTML=today.toString();  
+	    document.getElementById("d8").innerHTML=today.toTimeString();
+		document.getElementById('d9').innerHTML = today.toUTCString();
+		
+						
+		
+	</script>
+</body>
+</html>

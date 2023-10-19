@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>arr</title>
+</head>
+<body>
+
+	<script>
+		var kdata=['서울', '부산', '청주', '대구'];
+		/*
+		for(var i=0;i<kdata.length;i++){
+			document.write("배열 데이터 ["+i+"] : " + kdata[i] + "<p/>");	
+		}
+		*/
+		
+		function printArr(item, index){
+			document.write("배열 데이터 ["+index+"] : " + item + "<p/>");
+		}
+		
+		kdata.forEach(printArr);
+		
+		document.write("-----------------------------------------------<p/>");
+		
+		var data=[1,2,3,4,5,6,7,8,9,10]; 
+		var sum=0;
+		
+		data.forEach(addArr);
+		
+		function addArr(value){
+			sum+=value;
+		}
+		document.write("배열의 합 : " + sum + "<p/>");
+		
+		document.write("-----------------------------------------------<p/>");
+		
+		function mapArr(value) {
+			return value*value;
+		}
+		 
+		var mapdata=data.map(mapArr); 
+		
+		document.write("원래의 데이터: "+data+"</p>");
+		document.write("map 메소드 적용 배열 : "+mapdata+"</p>");
+		
+		document.write("-----------------------------------------------<p/>");
+		
+		var data2=[21,12,23,34,25,16,27,8,49,120];
+		function filterArr(value) {
+			return value>=19;
+		}
+		 
+		var fdata=data2.filter(filterArr); 
+		
+		document.write("원래의 데이터: "+data2+"</p>");
+		document.write("filter 메소드 적용 배열 : "+fdata+"</p>");
+	</script>
+
+</body>
+</html>

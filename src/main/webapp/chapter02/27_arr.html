@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>arr</title>
+</head>
+<body>
+
+	<script>
+		var arr0=[10, 20, 30, 40, 50];
+		var arr1=[11, 21, 31, 41, 51];
+        var arr2=[12, 22, 32, 42, 52];
+        var arr3=[13, 23, 33, 43, 53];
+		var allArr=[arr0, arr1, arr2, arr3]; //2차원 (4행,5열)
+		var partArr=[arr1, arr3]; //2차원 (2행,5열)
+		
+		function printAll(){
+			for(var i=0; i<allArr.length;i++){
+				for(var j=0; j<allArr[i].length;j++){
+					document.write(allArr[i][j]+" ");
+				}
+				document.write("<br/>");
+			}
+			document.write("<a href='27_arr.html'>[돌아가기]</a>");
+		}
+		
+		function partPart(){
+			for(var i=0; i<partArr.length;i++){
+				for(var j=0; j<partArr[i].length;j++){
+					document.write(partArr[i][j]+" ");
+				}
+				document.write("<br/>");
+			}
+			document.write("<a href='27_arr.html'>[돌아가기]</a>");
+		}
+		
+	</script>
+	
+	<button type="button" onclick="printAll()">전체 배열 데이터 보기</button></p>
+    <button type="button" onclick="partPart()">홀수 배열 데이터 보기</button>
+
+	
+</body>
+</html>

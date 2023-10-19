@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>arr</title>
+</head>
+<body>
+	
+	<script>
+		var com=[95,88, ,72,68, ,99,85,78,95]; //10명 8명의 점수만 입력
+		var getAvg;
+		
+		function printArr(){
+			var i, sum=0;
+			var count=0;
+			var n=com.length;
+			document.write(n+"명의 점수 출력<br>");
+			for(i=0;i<n;i++){
+				if(com[i]===undefined){
+					continue;
+				}else{
+					count++;
+					sum+=com[i];
+				}
+			}
+			
+			document.write("점수를 입력한 학생 : "+count+"명<p/>")
+			document.write("총점 : "+sum+"<p/>")
+			return (sum/count);
+			
+		}
+		
+		getAvg = printArr();
+		document.write("평균 : <b>"+getAvg+"</b> <br>")
+		
+		document.write("================================================== <br>")
+		
+		var x=5;
+		var arr=[100, "Seoul", true, x]; //다양한 데이터 타입 저장
+		function printArray(){
+			var i;
+			for(i=0; i<arr.length; i++){
+				document.write("배열 데이터 ["+ i +"] = "+arr[i]+"<br>");
+			}
+		}
+		
+		printArray();
+		
+		document.write("================================================== <br>")
+		
+		var arr=[10, 20,30,40,'50']; //다양한 데이터 타입 저장
+		function printCal(){
+			var i, sum=0;
+			for(i=0; i<arr.length; i++){
+				sum+=arr[i];
+			}
+			return sum;
+		}
+		
+		var result=printCal();
+		document.write("배열 원소 합 : "+result+"<br>");
+	</script>
+	
+</body>
+</html>

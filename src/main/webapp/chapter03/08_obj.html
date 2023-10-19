@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>obj</title>
+</head>
+<body>
+	
+	<p id="car"></p>
+	
+    <p>[Car1 속성]</p>
+    <p id="car0"></p>  
+    <p>[Car2 속성]</p>
+    <p id="car1"></p>  
+    <p>[Car3 속성]</p>
+    <p id="car2"></p>  
+	
+	<script>
+		
+		var car = new Array(['Sonata','blue',100],
+						    ['Jeep', 'red', 70],
+						    ['Audi', 'white', 150]);
+		
+		var cName = document.getElementById('car');
+		cName.textContent = "Car[2][0] : "+car[2][0];
+		
+		for(var i=0; i<3;i++){
+			var cName = document.getElementById('car'+i);
+			cName.textContent = car[i];
+		}
+		
+	</script>
+</body>
+</html>
+
+

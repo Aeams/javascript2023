@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+
+	<script>
+		
+		function changeClass(){
+			var heading = document.getElementById('myHeading');
+			heading.className = "blue";
+		};
+		
+	</script>
+	
+	<style>
+		.red {
+			color : red
+		}
+		.blue {
+			color : blue
+		}
+	</style>
+
+</head>
+<body>
+	
+	<h1 id="myHeading" class="red">Hello World</h1>
+	<button type="button" onclick="changeClass()">ChangeClass</button>
+	
+	
+</body>
+</html>

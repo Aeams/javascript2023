@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>if</title>
+</head>
+<body>
+	<script>
+		var point = prompt('점수를 입력해주세요.');
+		
+		var grade = "";
+		
+		if(point>100 && point<0){
+			document.write("0~100점 사이의 값을 입력해야 합니다."+"</p>");
+		}else if(point >= 90){
+			grade = "A";
+			document.write("매우 우수한 학생입니다."+"</p>");
+		}else if(point >= 80){
+			grade = "B";
+			document.write("우수한 학생입니다."+"</p>");
+		}else if(point >= 70){
+			grade = "C";
+			document.write("조금만 노력해주세요."+"</p>");
+		}else if(point >= 60){
+			grade = "D";
+			document.write("많이 노력해주세요."+"</p>");
+		}else{
+			grade = "F";
+			document.write("재수강 대상 학생입니다.."+"</p>");
+		}
+		
+		document.write("학점은 <b>"+grade+"</b>입니다.</p>");
+		
+	</script>
+</body>
+</html>

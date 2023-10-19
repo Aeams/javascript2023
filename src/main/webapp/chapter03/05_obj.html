@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>obj</title>
+</head>
+<body>
+	
+	<p>[Hong's Car]</p>
+    <p id="carname"></p>
+    <p id="carcolor"></p>
+    <p id="carspeed"></p>
+    <p>[Kim's Car]</p>
+    <p id="carname2"></p>
+    <p id="carcolor2"></p>
+    <p id="carspeed2"></p>
+	
+	
+	<script>
+		
+		function Car(name, color, speed) {
+			this.name=name;
+			this.color=color;
+			this.speed=speed;
+			this.speedup=function(){
+				return this.speed+10;
+			};
+			this.speeddown=function(){
+				return this.speed-10;
+			};
+		}
+		
+		var hongCar = new Car('Sonata','blue',100);
+		var kimCar = new Car('Jeep','red',120);
+		
+		var hongCarName = document.getElementById('carname');
+		hongCarName.textContent = '자동차 이름 : '+ hongCar.name;
+		var hongCarColor = document.getElementById('carcolor');
+		hongCarColor.textContent='자동차 색상 : '+ hongCar.color;
+		var hongCarSpeed = document.getElementById('carspeed');
+		hongCarSpeed.textContent='자동차 속도 : '+ hongCar.speedup();
+		
+		var kimCarName = document.getElementById('carname2');
+		hongCarName.textContent='자동차 이름 : '+ kimCar.name;
+		var kimCarColor = document.getElementById('carcolor2');
+		kimCarColor.textContent='자동차 색상 : '+ kimCar.color;
+		var kimCarSpeed = document.getElementById('carspeed2');
+		kimCarSpeed.textContent='자동차 속도 : '+ kimCar.speedup();
+		
+	</script>
+</body>
+</html>
+
+
+<!--
+textContent : 웹문서 안에서 아이디를 찾아서 변수방에 부여한 후 변수의 내용을 출력
+				단, 선언된 아이디 순서대로 호출됨.
+-->
+

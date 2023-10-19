@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>var 키워드</title>
+</head>
+<body>
+	<script>
+		stdName = "민혁진"; //var 생략 가능 (지역변수 => 스택메모리)
+		comGrade = 96;
+		
+		var stdName; // (전역변수 => 데이터영역)
+		var comGrade;
+		
+		document.write("학생 이름 : " + stdName +"<br>");
+		document.write("컴퓨터 점수 : " + comGrade +"<br>");
+		
+	</script>
+</body>
+</html>
+
+<!--변수명 재 선언시 데이터 값 변동 없음-->

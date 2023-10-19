@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+
+	<script>
+		
+		document.addEventListener("DOMContentLoaded", function () {
+        var checkbox = document.getElementById("myCheckbox");
+        var output = document.getElementById("output");
+
+        checkbox.addEventListener("change", function () {
+          var isChecked = checkbox.value;
+          console.log(isChecked);
+          output.textContent = "동의 여부 : " + (isChecked?"true":"false");
+        });
+      });
+		
+	</script>
+
+</head>
+<body>
+	
+    <label> <input type="checkbox" id="myCheckbox" /> 동의합니다 </label>
+    <div id="output"></div>
+	
+</body>
+</html>

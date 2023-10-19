@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>obj</title>
+</head>
+<body>
+	
+	<h2>Soldesk Car</h2>
+	
+	<p id="carname" ></p>
+	<p id="carcolor" ></p>
+	<p id="carspeed" ></p>
+	
+	<script>
+		
+		var car = {
+			name : 'Sonata',
+			color : 'white',
+			speed : 60,
+			start : function(){
+				return this.speed + 10;
+			}
+		};
+		
+		var cname = document.getElementById("carname");
+		cname.textContent = car.name; 
+		
+		var carcolor = document.getElementById("carcolor");
+		carcolor.textContent = car.color;
+		/*
+		var cspeed = document.getElementById("carspeed");
+		cspeed.textContent = car.speed; */ //60
+		
+		var cspeed = document.getElementById("carspeed");
+		cspeed.textContent = car.start(); //70
+	</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>지역변수와 전역변수</title>
+</head>
+<body>
+	<script>
+		function getGrade(){
+			var kor=95; // 지역변수
+			return kor;
+		}
+		
+		getKor = getGrade(); // 스택메모리에서 호출되므로 읽고 사라짐 -> 함수내에서 프린트를 하거나 return값 줘야함.
+		document.write("국어 점수 : "+getKor+"<br/>");
+		
+	</script>
+</body>
+</html>

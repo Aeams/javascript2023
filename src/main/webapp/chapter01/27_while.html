@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>while</title>
+</head>
+<body>
+   <script>
+	   
+	   var x=1; // 전역변수
+        var sum1=0;
+        while(x<=100) {
+            sum1+=x;
+            x++;
+        } 
+        document.write("1~100까지 합 : <b>" + sum1 + "</b>"+"<br>");
+	    document.write("--------------------------------"+"<br>");
+	   var y=1; // 전역변수
+        var sum2=0;
+         do{
+            sum2+=y;
+            y++;
+        }while(y<=100)
+	    document.write("1~100까지 합 : <b>" + sum2 + "</b>"+"<br>");
+	    document.write("--------------------------------"+"<br>");
+	    var z=1;
+	    var sum3=0;
+	    while(1){ //무한 반복
+			sum3+=z;
+			z++;
+			if(z==10001){
+				break;
+			}
+		}
+		document.write("1~100까지 합 : <b>" + sum3 + "</b>"+"<br>");
+	    
+	    
+	   
+   </script>
+</body>
+</html>

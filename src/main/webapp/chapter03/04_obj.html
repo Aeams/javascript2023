@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>obj</title>
+</head>
+<body>
+	
+	<h2>Soldesk Car</h2>
+	
+	<p id="carname" ></p>
+	<p id="carcolor" ></p>
+	<p id="upspeed" ></p>
+	<p id="downspeed" ></p>
+	
+	
+	<script>
+		
+		var car = {
+			name : 'Sonata',
+			color : 'white',
+			speed : 50,
+			speedUp : function(a){
+				var sp= this.speed+a;
+				
+				if(sp >= 180){
+					sp = 50;
+					return sp;
+				}else{
+					return sp;	
+				}
+				
+			},
+			speedDown : function(a){
+				var sp= this.speed-a;
+				
+				if(sp < 0){
+					sp=0;
+					return sp;
+				}else{
+					return sp;	
+				}
+			}
+			
+		};
+		
+		var cname = document.getElementById("carname");
+		cname.textContent = car.name; 
+		
+		var carcolor = document.getElementById("carcolor");
+		carcolor.textContent = car.color;
+		
+		var upspeed = document.getElementById("upspeed");
+		upspeed.textContent = car.speedUp(100);
+		
+		var downspeed = document.getElementById("downspeed");
+		downspeed.textContent = car.speedDown(30);
+		
+	</script>
+</body>
+</html>
+
+
+<!--
+textContent : 웹문서 안에서 아이디를 찾아서 변수방에 부여한 후 변수의 내용을 출력
+				단, 선언된 아이디 순서대로 호출됨.
+-->
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>console</title>
+</head>
+
+<body>
+	<script>
+		var printMessage="계산 결과 ? ";
+		var number = 10;
+		var number2 = 5;
+		var numberFloat = 0.45;
+		
+		var result;
+		// 각 변수값 출력
+		console.log('각 변수 안의 값 출력');
+		console.log(printMessage);
+		console.log(number);
+		console.log(number2);
+		console.log(numberFloat);
+		
+		// 사칙연산
+		result = number+numberFloat;
+		console.log('덧셈, '+printMessage);
+		console.log(result);
+		result = number - numberFloat;
+		console.log('뺄셈, '+printMessage);
+		console.log(result);
+		result = number * number2;
+		console.log('곱셈, '+printMessage);
+		console.log(result);
+		result = number / number2;
+		console.log('나눗셈, '+printMessage);
+		console.log(result);
+		
+		// 단항연산
+		number++;
+		console.log(number);
+		number--;
+		console.log(number);
+		
+		result=number2%number;
+		console.log('나머지연산, '+printMessage);
+		console.log(result);
+	</script>
+</body>
+
+</html>

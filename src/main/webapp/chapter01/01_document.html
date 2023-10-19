@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>document</title>
+	<script>
+		var num=0;
+		document.write("head 태그 내의 실행 순서 : " + num + "<br/>");
+	</script>
+	<script>
+		var num=1;
+		document.write("head 태그 내의 실행 순서 : " + num + "<br/>");
+	</script>
+</head>
+<body>
+	<script>
+		var num=2;
+		document.write("body 태그 내의 실행 순서 : " + num + "<br/>");
+	</script>
+	<script>
+		var num=3;
+		document.write("body 태그 내의 실행 순서 : " + num + "<br/>");
+	</script>
+</body>
+</html>

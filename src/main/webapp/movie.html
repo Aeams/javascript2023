@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Movie</title>
+<style>
+body {
+   margin: 10px;
+}
+
+.box1 {
+   width: 400px;
+   background-color: green;
+   color: white;
+   padding: 15px;
+   text-align: center;
+}
+
+.box2 {
+   width: 400px;
+   margin-top: 15px;
+   text-align: center;
+}
+
+#msg {
+   border-radius: 5px;
+   border: 2px solid #73ad21;
+   padding: 10px;
+   margin-top: 15px;
+   width: 400px;
+   height: 200px;
+   font-size: 14px;
+   text-align: left;
+}
+</style>
+</head>
+<body>
+   <form action="" method="get">
+      <div class="box1">일별 박스 오피스</div>
+      <div class="box2">
+         <input type="text" name="txtYear" id="txtYear" size="4" />년
+         <!--  select > option -->
+         <select name="selMon" id="selMon">
+            <option value="01">1월</option>
+            <option value="02">2월</option>
+            <option value="03">3월</option>
+            <option value="04">4월</option>
+            <option value="05">5월</option>
+            <option value="06">6월</option>
+            <option value="07">7월</option>
+            <option value="08">8월</option>
+            <option value="09">9월</option>
+            <option value="10">10월</option>
+            <option value="11">11월</option>
+            <option value="12">12월</option>
+         </select> <select name="selDay" id="selDay">
+            <option value="01">1일</option>
+            <option value="02">2일</option>
+            <option value="03">3일</option>
+            <option value="04">4일</option>
+            <option value="05">5일</option>
+            <option value="06">6일</option>
+            <option value="07">7일</option>
+            <option value="08">8일</option>
+            <option value="09">9일</option>
+            <option value="10">10일</option>
+            <option value="11">11일</option>
+            <option value="12">12일</option>
+            <option value="13">13일</option>
+            <option value="14">14일</option>
+            <option value="15">15일</option>
+            <option value="16">16일</option>
+            <option value="17">17일</option>
+            <option value="18">18일</option>
+            <option value="19">19일</option>
+            <option value="20">20일</option>
+            <option value="21">21일</option>
+            <option value="22">22일</option>
+            <option value="23">23일</option>
+            <option value="24">24일</option>
+            <option value="25">25일</option>
+            <option value="26">26일</option>
+            <option value="27">27일</option>
+            <option value="28">28일</option>
+            <option value="29">29일</option>
+            <option value="30">30일</option>
+            <option value="31">31일</option>
+         </select>
+         <button type="button" id="btn1">확인</button>
+         <div id="msg"></div>
+         <div class="box3"></div>
+      </div>
+   </form>
+
+   <!-- 영화진흥위원회 OpenAPI를 이용한 서비스(https://kobis.or.kr/kobisopenapi)
+   전일자 1~10 영화인기 순서 가져오기 -->
+
+   <script>
+      //const : 상수값으로 선언 
+      const txtYear = document.querySelector("#txtYear");
+      const selMon = document.querySelector("#selMon");
+      const selDay = document.querySelector("#selDay");
+
+      //박스 오피스 순위 보여줄 영역
+      const msg = document.querySelector("#msg");
+      //상세정보 보여줄 영역 가져오기
+      const detail = document.querySelector(".box3");
+      
+      function init(){
+         //오늘 날짜
+         const today=new Date();
+         //년
+         let year=today.getFullYear();
+         //월
+         let month=today.getMonth() +1;
+         //일
+         let day=today.getDate()-1;
+         
+         txtYear.value=year;
+         
+         if(month < 10){
+            month="0"+month;
+         }
+         
+         if(day < 10){
+            day="0"+day;
+         }
+         
+         selMon.value=month;
+         selDay.value=day;
+      }
+      
+      function show(movieCd){
+         //특정 영화를 식별하는 movieCd라는 매개변수를 받음.
+         console.log("movieCd",movieCd);
+         
+         //영화상세 정보 요청하기 -> API 주소가 저장
+         let url="http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=f5eef3421c602c6cb7ea224104795888&movieCd=";
+         
+         url+=movieCd;
+         
+         console.log("영화상세정보 ", url);
+         
+         fetch(url).then((response) => {
+             //404:페이지 없음 | 500:서버에러 | 403:보안 => fetch() resolve에 Promise를 반환
+             if (!response.ok) {
+                    throw new Error("데이터가 없습니다.");
+                  }
+                  return response.json();
+            
+         })
+         //응답이 정상이면 response.json()을 파싱하고 그 결과를 then(data)에 담는다
+         .then((data) => {
+            console.log(data);
+            const movieInfo=data.movieInfoResult.movieInfo;
+            console.log(movieInfo);
+            
+            // movieInfo 에서 movieNm(한글제목), movieNmEn(영어제목), showTm(상영시간), directors(감독)
+               // actors(출연배우) 추출 후 box3 안에 보여주기
+               
+               let str="<ul>";
+               
+               //한글제목
+               str+="<li>영화제목 : "+movieInfo.movieNm+"</li>";
+               //영어제목
+               str += "<li>영어제목 : " + movieInfo.movieNmEn + "</li>";
+               //상영시간
+               str += "<li>상영시간 : " + movieInfo.showTm + " 분</li>";
+               //감독 : 한명만 추출
+               if (movieInfo.directors.length > 0) {
+                 str += "<li>감독 : " + movieInfo.directors[0].peopleNm + "</li>";
+               } else {
+                 str += "<li>감독 : 없음 </li>";
+               }
+               //출연배우 : 전부 추출
+               const length = movieInfo.actors.length;
+               let peopleNm = "";
+               movieInfo.actors.forEach((actor, idx) => {
+                 // 현재 요소가 배열의 마지막 요소라면(idx == length - 1),
+                 // peopleNm에 배우의 이름(actor.peopleNm)만 추가
+                 if (idx == length - 1) {
+                   peopleNm += actor.peopleNm;
+                 } else {
+                   // peopleNm에 배우의 이름과 그 뒤에 쉼표와 공백을 추가
+                   peopleNm += actor.peopleNm + ", ";
+                 }
+               });
+               str += "<li>출연배우 : " + peopleNm + "</li>";
+               str += "</ul>";
+               // HTML 문자열을 detail이라는 이름의 DOM 요소의 내용으로 설정.
+               // 이렇게 하면 웹 페이지에 영화 정보가 표시
+               detail.innerHTML = str;
+         })
+         .catch((err) => {});
+         
+      }//show
+      
+      init();
+      //확인 버튼 클릭시 전일자 영화 순위 가져오기
+      document.querySelector("#btn1").addEventListener("click",() => {
+         
+       let url =
+                "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=";
+
+      // 사용자가 선택한 날짜 가져오기
+           let date = txtYear.value + selMon.value + selDay.value;
+           // url 과 연결
+           url += date;
+           // console.log() 확인
+           console.log(url);
+
+           // 데이터 요청 ==> ajax
+           // fetch
+
+           fetch(url)
+             .then((response) => {
+               if (!response.ok) {
+                 throw new Error("주소를 확인해 주세요");
+               }
+               // 서버에서 오는 데이터는 json ==> 스크립트 객체 처리
+               return response.json();
+             })
+             .then((data) => {
+               console.log(data);
+
+               // dailyBoxOfficeList 가져오기
+               const dailyBoxOfficeList = data.boxOfficeResult.dailyBoxOfficeList;
+               console.log(dailyBoxOfficeList);
+
+               let str = "";
+
+               // data 에서 rank(rankInten) : movieNm 추출
+               // movieCd 추출(영화 상세 정보 요청하는 데 필요)
+               dailyBoxOfficeList.forEach((element) => {
+                 //순위
+                 str += element.rank + " 위";
+                 //전일자 증감
+                 const rankInten = parseInt(element.rankInten);
+                 if (rankInten > 0) str += "(▲";
+                 else if (rankInten < 0) str += "(▼";
+                 else str += "(";
+
+                 str += rankInten + ") : ";
+
+                 //영화명
+                 str +=
+                   "<a href='#' onclick='javascript:show(" +
+                   element.movieCd +
+                   ")'>" +
+                   element.movieNm +
+                   "</a><br>";
+               });
+               // 박스 영역 안에 보여주기
+               msg.innerHTML = str;
+             })
+             .catch((err) => {
+               msg.innerHTML = err;
+             });
+         });
+         
+   </script>
+</body>
+</html>
+

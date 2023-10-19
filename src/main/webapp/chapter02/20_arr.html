@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>arr</title>
+</head>
+<body>
+
+	<script>
+		var kdata=['서울', '부산', '구포', '대구', '대전'];
+		
+		var str1 = kdata.splice(1,2);
+		document.write("삭제 데이터 : "+str1+"<br>"); //부산, 구포
+		document.write("남은 데이터 : "+kdata+"<br>"); //서울, 대구, 대전
+		
+		var str2 = kdata.splice(1,1, '강릉','세종');
+		document.write("삭제 데이터 : "+str2+"<br>"); //대구
+		document.write("남은 데이터 : "+kdata+"<br>"); //서울, 강릉, 세종, 대전
+		
+		var str3 = kdata.splice(2, Number.MAX_VALUE);
+		document.write("삭제 데이터 : "+str3+"<br>"); //세종, 대전
+		document.write("남은 데이터 : "+kdata+"<br>"); //서울, 강릉
+		
+	</script>
+
+</body>
+</html>

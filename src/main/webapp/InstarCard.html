@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Instar Card</title>
+	<link rel="stylesheet" href="./style/InstarCard_style.css" />
+	<script type="text/javascript" src="./script/carousel.js"></script>
+	<script type="text/javascript" src="./script/smoothscroll.min.js"></script>
+</head>
+
+<body>
+	<section class="container">
+		<article class="card">
+			<header>
+				<div class="circle-image">
+					<img src="./img/profile.png" />
+				</div>
+				<div class="card-username">
+					<span>Soldesk</span>
+				</div>
+				<div class="option-more">
+					<button class="transparent-button"><img src="./img/icons/mark.png" /></button>
+				</div>
+			</header>
+			<main>
+				<div class="carousel" data="0">
+					<!--0번 이미지
+						케러셀 영역-->
+					<div>
+						<ul>
+							<li><img src="./img/mountain1.jpg" /></li>
+							<li><img src="./img/mountain2.jpg" /></li>
+							<li><img src="./img/mountain3.jpg" /></li>
+							<li><img src="./img/mountain4.jpg" /></li>
+						</ul>
+						<div class="slide slide-left" style="display: none">
+							<button class="transparent-button">
+								<img src="./img/icons/arrow-left.png" />
+							</button>
+						</div>
+						<div class="slide slide-right">
+							<button class="transparent-button">
+								<img src="./img/icons/arrow-right.png" />
+							</button>
+						</div>
+						<footer>
+							<div class="active"></div>
+							<div></div>
+							<div></div>
+							<div></div>
+						</footer>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="card-buttons">
+						<div>
+							<button class="transparent-button">
+								<img src="./img/icons/heart.png" />
+							</button>
+						</div>
+
+						<div>
+							<button class="transparent-button">
+								<img src="./img/icons/chat.png" />
+							</button>
+						</div>
+						<div>
+							<button class="transparent-button">
+								<img src="img/icons/paper-plane.png" />
+							</button>
+						</div>
+						<div class="last-card-button">
+							<button class="transparent-button">
+								<img src="img/icons/bookmark.png" />
+							</button>
+						</div>
+					</div>
+					<div class="card-likes">좋아요 999,999개</div>
+
+					<div class="card-content">
+						<ul>
+							<li><span>soldesk.user </span>본문내용</li>
+							<li class="comment">
+								<div>
+									<span>soldesk.user </span>댓글 1
+									<button class="transparent-button">
+										<img src="./img/icons/heart.png" />
+									</button>
+								</div>
+							</li>
+							<li class="comment">
+								<div>
+									<span>soldesk.user </span>댓글 2
+									<button class="transparent-button">
+										<img src="./img/icons/heart.png" />
+									</button>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="card-time">7일전</div>
+				</div>
+			</main>
+			<footer class="card-comment">
+				<input type="text" placeholder="댓글달기..." name="comment" />
+				<div>
+					<button class="transparent-button">게시</button>
+				</div>
+			</footer>
+		</article>
+	</section>
+</body>
+
+</html>

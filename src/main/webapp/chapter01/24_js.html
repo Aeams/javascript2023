@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+	<script>
+		var solution = 10;
+		var input = prompt('수를 맞춰보세요.');
+		console.log(input);
+		
+		if(input>solution+2){
+			alert('Down');
+		}else if(input<solution-2){
+			alert('Up');
+		}else{
+			if(input==solution){
+				alert('정답!');
+			}else{
+				alert('정답에 가깝습니다.');
+			}
+		}
+	//-------------------------------------------------------
+		var gender = prompt('성별을 입력하세요.');
+		switch(gender){
+			case '여자':
+				alert('female');
+			break;
+			case '남자':
+				alert('male');
+			break;
+			case '기타' :
+				alert('other');
+			break;
+			default :
+				alert('남자,여자,기타 중 하나를 입력하세요.');
+		}
+	</script>
+</body>
+</html>
